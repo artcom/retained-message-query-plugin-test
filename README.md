@@ -49,11 +49,12 @@ docker-compose -f docker-compose-enterprise.yml up
 
 ## Results
 
-| HiveMQ edition    | mqtt client | message retained in query plugin | number of messages sent |
-| ----------------- | ----------- | -------------------------------- | ----------------------- |
-| HiveMQ CE         | mqttjs      | sometimes                        | 1                       |
-| HiveMQ CE         | topping     | no                               | 1                       |
-| HiveMQ CE         | mosquitto   | yes                              | 1                       |
-| HiveMQ Enterprise | mqttjs      | yes                              | 1                       |
-| HiemQ Enterprise  | topping     | yes                              | 1                       |
-| HiveMQ Enterprise | mosquitto   | yes                              | 1                       |
+| HiveMQ edition    | mqtt client | network  | message retained in query plugin | number of messages sent |
+| ----------------- | ----------- | -------- | -------------------------------- | ----------------------- |
+| HiveMQ CE         | mqttjs      | docker   | sometimes                        | 1                       |
+| HiveMQ CE         | topping     | docker   | no                               | 1                       |
+| HiveMQ CE         | mosquitto   | external | yes                              | 1                       |
+| HiveMQ CE         | topping     | external | yes                              | 1                       |
+| HiveMQ Enterprise | mqttjs      | docker   | yes                              | 1                       |
+| HiemQ Enterprise  | topping     | docker   | yes                              | 1                       |
+| HiveMQ Enterprise | mosquitto   | docker   | yes                              | 1                       |
