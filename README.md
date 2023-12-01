@@ -56,5 +56,5 @@ docker-compose -f docker-compose-enterprise.yml up
 | HiveMQ CE         | mosquitto   | external | yes                              | 1                       |
 | HiveMQ CE         | topping     | external | yes                              | 1                       |
 | HiveMQ Enterprise | mqttjs      | docker   | yes                              | 1                       |
-| HiemQ Enterprise  | topping     | docker   | yes                              | 1                       |
+| HiveMQ Enterprise | topping     | docker   | yes                              | 1                       |
 | HiveMQ Enterprise | mosquitto   | docker   | yes                              | 1                       |
