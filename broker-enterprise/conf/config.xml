@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<hivemq xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="hivemq-config.xsd">
+    <listeners>
+        <tcp-listener>
+            <port>1883</port>
+            <bind-address>0.0.0.0</bind-address>
+        </tcp-listener>
+        <websocket-listener>
+            <port>8888</port>
+            <bind-address>0.0.0.0</bind-address>
+            <path>/mqtt</path>
+            <allow-extensions>true</allow-extensions>
+        </websocket-listener>
+    </listeners>
+    <control-center>
+        <enabled>true</enabled>
+        <listeners>
+            <http>
+                <port>8081</port>
+                <bind-address>127.0.0.1</bind-address>
+            </http>
+        </listeners>
+    </control-center>
+
+    <mqtt>
+        <queued-messages>
+            <max-queue-size>1000</max-queue-size>
+            <strategy>discard-oldest</strategy>
+        </queued-messages>
+        <session-expiry>
+            <max-interval>3600</max-interval>
+        </session-expiry>
+    </mqtt>
+
+    <overload-protection>
+       <enabled>false</enabled>
+    </overload-protection>
+</hivemq>

@@ -1,0 +1,33 @@
+services:
+  broker:
+    build: ./broker-ce
+    ports:
+      - published: 1883
+        target: 1883
+      - published: 8888
+        target: 8888
+      - published: 8080
+        target: 8080
+    restart: unless-stopped
+
+  retained-message-generator-topping:
+    build: ./retained-message-generator-topping
+    depends_on:
+      - broker
+    environment:
+      PORT: 3000
+    ports:
+      - published: 3000
+        target: 3000
+    restart: unless-stopped
+
+  retained-message-generator-mqttjs:
+    build: ./retained-message-generator-mqttjs
+    depends_on:
+      - broker
+    environment:
+      PORT: 3001
+    ports:
+      - published: 3001
+        target: 3001
+    restart: unless-stopped
