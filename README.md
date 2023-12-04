@@ -4,16 +4,16 @@ Docker compose file for testing the Retained Message Query Plugin with HiveMQ CE
 
 ## Usage
 
-### HiveMQ CE
+### HiveMQ Community Edition
 
 ```bash
 docker-compose -f docker-compose-ce.yml up
 ```
 
-### HiveMQ Enterprise
+### HiveMQ Enterprise Edition
 
 ```bash
-docker-compose -f docker-compose-enterprise.yml up
+docker-compose -f docker-compose-ee.yml up
 ```
 
 ### All
@@ -39,15 +39,3 @@ docker-compose -f docker-compose-enterprise.yml up
   --data '{"topic":"topic","depth":2}' \
   http://localhost:8080/query
   ```
-
-## Results
-
-| HiveMQ edition    | mqtt client | network  | message retained in query plugin | number of messages sent |
-| ----------------- | ----------- | -------- | -------------------------------- | ----------------------- |
-| HiveMQ CE         | mqttjs      | docker   | sometimes                        | 1                       |
-| HiveMQ CE         | topping     | docker   | no                               | 1                       |
-| HiveMQ CE         | mosquitto   | external | yes                              | 1                       |
-| HiveMQ CE         | topping     | external | yes                              | 1                       |
-| HiveMQ Enterprise | mqttjs      | docker   | yes                              | 1                       |
-| HiveMQ Enterprise | topping     | docker   | yes                              | 1                       |
-| HiveMQ Enterprise | mosquitto   | docker   | yes                              | 1                       |
