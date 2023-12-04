@@ -19,7 +19,10 @@ async function main() {
   app.post("/publish", async (req, res) => {
     await Promise.all(
       generateRetainedMessages(req.body.number).map((message) =>
-        mqttjsClient.publish(message.topic, message.payload, { retain: true, qos: 2 }),
+        mqttjsClient.publish(message.topic, message.payload, {
+          retain: true,
+          qos: Number(req.body.qos) || 2,
+        }),
       ),
     )
     res.status(200).json({ success: "true" })
