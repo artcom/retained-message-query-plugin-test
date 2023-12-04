@@ -39,3 +39,7 @@ docker-compose -f docker-compose-ee.yml up
   --data '{"topic":"topic","depth":2}' \
   http://localhost:8080/query
   ```
+
+## Logs
+
+The retained message query plugin logs all retained messages received when `HIVEMQ_LOG_LEVEL=DEBUG` is set.
