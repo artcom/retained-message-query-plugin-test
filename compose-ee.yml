@@ -1,6 +1,6 @@
 services:
   broker:
-    build: ./broker-enterprise
+    build: ./broker-ee
     ports:
       - published: 1883
         target: 1883
