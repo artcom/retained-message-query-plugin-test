@@ -40,6 +40,13 @@ docker-compose -f docker-compose-ee.yml up
   http://localhost:8080/query
   ```
 
+## Retained Message Generator API
+
+### Publish a message
+
+- Endpoint: `POST /publish`
+- Body: `{"number": <number of messages to publish>, "qos": <qos>}`
+
 ## Logs
 
 The retained message query plugin logs all retained messages received when `HIVEMQ_LOG_LEVEL=DEBUG` is set.
