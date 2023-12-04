@@ -18,13 +18,6 @@ docker-compose -f docker-compose-enterprise.yml up
 
 ### All
 
-- send a message with the MQTT.js client
-  ```bash
-  curl --header "Content-Type: application/json" \
-  --request POST \
-  --data '{"number":1}' \
-  http://localhost:3000/publish
-  ```
 - check plugin
   ```bash
   curl --header "Content-Type: application/json" \
@@ -32,7 +25,7 @@ docker-compose -f docker-compose-enterprise.yml up
   --data '{"topic":"topic","depth":2}' \
   http://localhost:8080/query
   ```
-- send a message with the Topping client
+- send a message to the broker through the docker network
   ```bash
   curl --header "Content-Type: application/json" \
   --request POST \
