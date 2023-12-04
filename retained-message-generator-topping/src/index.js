@@ -20,7 +20,7 @@ async function main() {
     await Promise.all(
       generateRetainedMessages(req.body.number).map(
         (message) => toppingClient.publish(message.topic, message.payload),
-        { qos: Number(req.body.qos) || 2 },
+        { qos: req.body.qos || 2 },
       ),
     )
     res.status(200).json({ success: "true" })

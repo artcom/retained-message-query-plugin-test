@@ -21,7 +21,7 @@ async function main() {
       generateRetainedMessages(req.body.number).map((message) =>
         mqttjsClient.publish(message.topic, message.payload, {
           retain: true,
-          qos: Number(req.body.qos) || 2,
+          qos: req.body.qos || 2,
         }),
       ),
     )
