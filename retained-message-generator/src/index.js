@@ -18,9 +18,11 @@ async function main() {
 
   app.post("/publish", async (req, res) => {
     await Promise.all(
-      generateRetainedMessages(req.body.number).map(
-        (message) => toppingClient.publish(message.topic, message.payload),
-        { qos: req.body.qos || 2 },
+      generateRetainedMessages(req.body.number).map((message) =>
+        toppingClient.publish(message.topic, message.payload, {
+          qos: req.body.qos != null ? req.body.qos : 2,
+          retain: req.body.retain != null ? req.body.retain : true,
+        }),
       ),
     )
     res.status(200).json({ success: "true" })

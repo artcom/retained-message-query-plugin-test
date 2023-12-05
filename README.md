@@ -45,7 +45,14 @@ docker-compose -f docker-compose-ee.yml up
 ### Publish a message
 
 - Endpoint: `POST /publish`
-- Body: `{"number": <number of messages to publish>, "qos": <qos>}`
+- Body:
+  ```json
+  {
+    "number": "number of messages to publish, required (Integer)",
+    "qos": "quality of service, optional, default=2 (Integer)",
+    "retain": "retain flag, optional, default=true (Boolean)"
+  }
+  ```
 
 ## Logs
 
