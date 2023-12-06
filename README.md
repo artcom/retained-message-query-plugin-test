@@ -30,7 +30,7 @@ docker-compose -f docker-compose-ee.yml up
   curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"number":1}' \
-  http://localhost:3001/publish
+  http://localhost:3000/publish
   ```
 - check plugin
   ```bash
