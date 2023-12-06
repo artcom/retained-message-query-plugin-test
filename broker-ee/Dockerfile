@@ -2,7 +2,7 @@
 FROM alpine:3.18 AS extension-getter
 
 ENV MQTT_MESSAGE_LOG_EXTENSION_VERSION=1.1.3
-ENV RETAINED_MESSAGE_QUERY_EXTENSION_VERSION=v1.2.4
+ENV RETAINED_MESSAGE_QUERY_EXTENSION_VERSION=v1.2.5
 
 RUN wget https://www.hivemq.com/releases/extensions/hivemq-mqtt-message-log-extension-$MQTT_MESSAGE_LOG_EXTENSION_VERSION.zip &&\
   unzip hivemq-mqtt-message-log-extension-$MQTT_MESSAGE_LOG_EXTENSION_VERSION.zip -d /extensions
